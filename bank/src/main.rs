@@ -26,7 +26,7 @@ impl Bank{
     }
 }
 
-fn print_account(account: Account){
+fn print_account(account: &Account){
     println!("{:#?}", account);
 }
 
@@ -37,5 +37,7 @@ fn main() {
     );
 
     println!("{:#?}", bank);
-    print_account(account);
+
+    print_account(&account);
+    print_account(&account);
 }
