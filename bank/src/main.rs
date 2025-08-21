@@ -27,17 +27,25 @@ impl Bank{
 }
 
 fn print_account(account: &Account){
-    println!("{:#?}", account);
+    println!("current account {:#?}", account);
+}
+
+fn add_account(bank: &mut Bank, account: Account){
+    bank.accounts.push(account);
 }
 
 fn main() {
-    let bank = Bank::new();
+    let mut bank = Bank::new();
     let account = Account::new(
         1, String::from("me")
     );
 
-    println!("{:#?}", bank);
+    println!("current bank status {:#?}", bank);
 
+    // pass by reference
     print_account(&account);
     print_account(&account);
+
+    add_account(&mut bank, account);
+    println!("current bank status {:#?}", bank);
 }
