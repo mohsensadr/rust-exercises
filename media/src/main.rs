@@ -2,7 +2,9 @@
 enum Media{
     Book { title: String, author: String },
     Movie { title: String, director: String },
-    Audiobook { title: String }
+    Audiobook { title: String },
+    Podcast(i32),
+    Placeholder
 }
 
 impl Media{
@@ -16,7 +18,13 @@ impl Media{
             }
             Media::Audiobook {title} => {
                 format!("Audiobook {}", title)
-            } 
+            }
+            Media::Podcast(number) => {
+                format!("Podcast {}", number)
+            }
+            Media::Placeholder => {
+               format!("Placeholder")
+            }
         }
     }
 }
@@ -50,6 +58,8 @@ fn main() {
         title: String::from("Bad Movie"),
         director: String::from("Bad Director")
     };
+    let podcast = Media::Podcast(10);
+    let placeholder = Media::Placeholder;
 
     println!("{}", audiobook.description());
     println!("{}", goodbook.description());
@@ -59,6 +69,7 @@ fn main() {
     catalog.add(audiobook);
     catalog.add(goodbook);
     catalog.add(badmovie);
-
+    catalog.add(podcast);
+    catalog.add(placeholder);
     println!("{:#?}", catalog);
 }
