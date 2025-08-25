@@ -15,13 +15,17 @@ fn extract_errors(text: &str) -> Vec<String> {
 }
 
 fn main() {
-    let mut error_logs = vec![];
 
     match fs::read_to_string("logs.txt") {
         Ok(text_that_was_read) => {
-            error_logs = extract_errors(text_that_was_read.as_str());
+            let error_logs = extract_errors(text_that_was_read.as_str());
+            match fs::write("errors.txt", error_logs.join("\n")) {
+                Ok(..) => println!("Wrote errors.txt"),
+                Err(reason_write_failed) => {
+                    println!("Writing of errors.txt failed: {}", reason_write_failed);
+                }
+            }
         }
         Err(error) => println!("Error: {}", error)
     }
-    println!("{:#?}", error_logs);
 }
