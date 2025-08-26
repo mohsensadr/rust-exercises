@@ -1,4 +1,4 @@
-# Solution to Some Exercises in Rust
+# Some Exercises in Rust
 
 This repository contains my personal solutions to the exercises and projects from the Udemy's [Rust: The Complete Developer's Guide](https://www.udemy.com/course/rust-the-complete-developers-guide/?couponCode=MT260825G1) 🎓.  The course provides a comprehensive introduction to Rust, covering **ownership, lifetimes, borrowing, traits, generics, error handling, modules**, and more. Here, you’ll find my implementations of the course challenges, structured by section.  
 
