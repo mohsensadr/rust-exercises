@@ -28,6 +28,7 @@ Some of the Rust concepts and features you’ll see in this repo:
 Clone the repo and run any project with Cargo:
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>/<project-folder>
+git clone https://github.com/mohsensadr/rust-exercises.git
+cd rust-exercises/<project-folder>
 cargo run
+```
